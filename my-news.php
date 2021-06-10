@@ -53,7 +53,7 @@
                           autocomplete="off" class="layui-input" readonly  value="<?php echo $row['phone'] ?>">
                       </div>
                   </div>
-                  <div class="layui-form-item">
+                  <!-- <div class="layui-form-item">
                       <label class="layui-form-label">角色</label>
                       <div class="layui-input-block">
                         <?php if ($row['role']=="超级管理员") {?>
@@ -63,15 +63,23 @@
                             <input type="checkbox" checked disabled id="checkbox2" name="like1[read]" lay-skin="primary" title="管理员" onclick="return false;">
                         <?php } ?>
                       </div>
-                  </div>
+                  </div> -->
                   <div class="layui-form-item">
                       <label for="L_pass" class="layui-form-label">
                           密码
                       </label>
                       <div class="layui-input-inline">
                           <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+<<<<<<< HEAD:my-news.php
                           autocomplete="off" class="layui-input" readonly  value="<?php echo $row['password'] ?>">
                       </div>
+=======
+                          autocomplete="off" class="layui-input" readonly>
+                      </div>
+                      <!-- <div class="layui-form-mid layui-word-aux">
+                          6到16个字符
+                      </div> -->
+>>>>>>> e97fddbca0252a3a8732fa6d08457273c77bea06:my-news.html
                   </div>
               </form>
             </div>
@@ -81,6 +89,43 @@
                 $ = layui.jquery;
                 var form = layui.form,
                 layer = layui.layer;
+<<<<<<< HEAD:my-news.php
+=======
+
+                //自定义验证规则
+                // form.verify({
+                //     nikename: function(value) {
+                //         if (value.length < 5) {
+                //             return '昵称至少得5个字符啊';
+                //         }
+                //     },
+                //     pass: [/(.+){6,12}$/, '密码必须6到12位'],
+                //     repass: function(value) {
+                //         if ($('#L_pass').val() != $('#L_repass').val()) {
+                //             return '两次密码不一致';
+                //         }
+                //     }
+                // });
+
+                //监听提交
+                form.on('submit(add)',
+                function(data) {
+                    console.log(data);
+                    //发异步，把数据提交给php
+                    layer.alert("增加成功", {
+                        icon: 6
+                    },
+                    function() {
+                        //关闭当前frame
+                        xadmin.close();
+
+                        // 可以对父窗口进行刷新 
+                        xadmin.father_reload();
+                    });
+                    return false;
+                });
+
+>>>>>>> e97fddbca0252a3a8732fa6d08457273c77bea06:my-news.html
             });</script>
         <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
