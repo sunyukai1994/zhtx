@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基于ACE实现javascript编辑器</title>
+  <script src="js/src/ace.js"></script>
+  <script src="js/src/ext-language_tools.js"></script>
+  <script src="./show_own_source.js"></script>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+    #editor { 
+        width: 100vm;
+		height: 500px;
+    }
+  </style>
+</head>
+<body>
+	<pre id="editor"></pre>
+	<script>
+		ace.require("ace/ext/language_tools");
+		var editor = ace.edit("editor");
+		// 设置编辑框编辑的语言
+		editor.session.setMode("ace/mode/html");
+		// 主题
+		// editor.setTheme("ace/theme/tomorrow");
+		editor.setTheme("ace/theme/monokai");
+		// 启用代码提示
+		editor.setOptions({
+			enableBasicAutocompletion: true,
+			enableSnippets: true,
+			enableLiveAutocompletion: true
+		});
+		// 去掉编辑器中间竖线
+		editor.setShowPrintMargin(false);
+	</script>
+</body>
+</html>

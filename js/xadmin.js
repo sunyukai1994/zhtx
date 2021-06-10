@@ -99,6 +99,8 @@
 	    if(full){
 	       layer.full(index); 
 	    }
+      // debugger
+      return false
 	}
 	/**
 	 * [close 关闭弹出层]

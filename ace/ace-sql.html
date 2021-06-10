@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>基于ACE实现MySQL编辑器</title>
+		<script src="js/src/ace.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入自动提示需要引入js文件 -->
+		<script src="js/src/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引用vue.js -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- vue 项目中常用的 1个 ajax 库 -->
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css"> 
+		#app{
+			 display: flex;
+			 justify-content: space-between;/* 对齐方式两边拉伸 */
+		}
+		.ace-editor{
+			width: 45vw;
+			height: 80vh;
+			font-size: 20px;
+			margin: 10px 0;
+		}
+		.btn{
+			border-radius: 5px;
+			width: 150px;
+			height: 40px;
+			background-color: #123456;
+			color: #fff;
+			border: none;
+			outline: none; /* 点击边框 */
+			cursor: pointer;
+			font-size: 15px;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<div>
+				<span>请输入MySQL建表语句</span>
+				<!-- 存放ace代码高亮编辑器 -->
+				<div ref="aceSql" id="sqlEditor" class="ace-editor"></div>
+				<div style="text-align: right;">
+					<input class="btn" type="button" value="点击生成EntityDo" @click="generateDo">
+				</div>
+			</div>
+			<div>
+				<span id="">结果</span>
+				<div ref="aceResult" id="resultEditor" class="ace-editor"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#app",
+				data:{
+					code:"",
+					// edit返回的对象内容
+					sqlEditor:null,
+					// 右侧结果内容
+					resultEditor:null,
+					// 主题
+					themePath:"ace/theme/monokai",
+					sqlModePath:"ace/mode/sql",
+					javaModePAth:"ace/mode/java",
+					jsonModePAth:"ace/mode/json",
+				},
+				methods:{
+					generateDo(){
+						console.log("aaa");
+					}
+				},
+				mounted: function(){
+					this.sqlEditor = ace.edit(this.$refs.aceSql,{
+						theme:this.themePath,
+						// 设置编辑框编辑的语言
+						mode:this.sqlModePath,
+						// 启用代码提示
+						enableBasicAutocompletion: true, 
+						// 启用代码块提示
+						enableSnippets: true, 
+						// 启用代码补全
+						enableLiveAutocompletion: true,
+					});
+					this.resultEditor = ace.edit(this.$refs.aceResult,{
+						theme:this.themePath,
+						mode:this.sqlModePath,
+						enableBasicAutocompletion: true, 
+						enableSnippets: true, 
+						enableLiveAutocompletion: true,
+					});
+				}
+			})
+			ace.edit("sqlEditor",{
+				theme:"ace/theme/monokai", // 设置主题
+				// 设置编辑框编辑的语言
+				mode:"ace/mode/sql",
+				// 启用代码提示
+				enableBasicAutocompletion: true, 
+				// 启用代码块提示
+				enableSnippets: true, 
+				// 启用代码补全
+				enableLiveAutocompletion: true,
+			});
+		</script>
+	</body>
+</html>
