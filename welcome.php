@@ -1,7 +1,7 @@
 <?php
 	header("Content-type:text/html;charset=utf8");
     $id=$_GET['id'];
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	mysqli_set_charset($conn,'utf8');
 	$sql="select * from admin where id='$id' ";
 	$que=mysqli_query($conn,$sql);

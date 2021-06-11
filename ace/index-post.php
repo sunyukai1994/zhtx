@@ -2,7 +2,7 @@
 	header("Content-type:text/html;charset=utf8");
     $username=$_POST['username'];
 	$password=$_POST['password'];
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	mysqli_set_charset($conn,'utf8');
 	$sql="select * from users where username='$username' and password='$password' ";
 	$que=mysqli_query($conn,$sql);

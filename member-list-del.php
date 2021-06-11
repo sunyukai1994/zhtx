@@ -1,6 +1,6 @@
 <?php
 	header("content-type:text/html;charset=utf8");
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	$id=$_GET["id"];
 	if($conn){
 		$sql="delete from users where id='$id' ";//通过指定条件删除表中的行

@@ -2,7 +2,7 @@
 	header("Content-type:text/html;charset=utf8");
     $formsname=$_POST['formsname'];
     $branchs=$_POST['branchs'];
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	mysqli_set_charset($conn,'utf8');
 	if($conn){
 		$sql2="select formsname from cate";

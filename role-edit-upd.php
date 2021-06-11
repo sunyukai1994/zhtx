@@ -13,7 +13,7 @@
 		$role="用户管理";
 	}
 	$describes=$_POST['describes'];
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	mysqli_set_charset($conn,'utf8');
 	if($conn){
 		$sql2="select username from roles";

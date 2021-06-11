@@ -4,7 +4,7 @@
 	$phone=$_POST['phone'];
 	$role=$_POST['role'];
 	$password=$_POST['password'];
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	mysqli_set_charset($conn,'utf8');
 	if($conn){
 		$sql2="select username from admin";

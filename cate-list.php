@@ -1,6 +1,6 @@
 <?php
 	header("Content-type:text/html;charset=utf8");
-	$conn=mysqli_connect("localhost","root","root","zhtx");//mysql_connect — 打开一个到 MySQL 服务器的连接
+	$conn=mysqli_connect("localhost","root","123456","zhtx");//mysql_connect — 打开一个到 MySQL 服务器的连接
 	mysqli_set_charset($conn,'utf8');//修改数据库连接字符集为 utf8
 	$sql="select * from cate";//查询表里所有的数据
 	$que=mysqli_query($conn,$sql);//执行一条 MySQL 查询

@@ -1,7 +1,7 @@
 <?php
 	header("content-type:text/html;charset=utf8");
 	$id=$_GET["id"];
-	$conn=mysqli_connect("localhost","root","root","zhtx");
+	$conn=mysqli_connect("localhost","root","123456","zhtx");
 	mysqli_set_charset($conn,'utf8');
 	if($conn){
 		$sql="select * from users where id='$id'";
